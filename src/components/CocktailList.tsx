@@ -2,10 +2,10 @@ import React from 'react'
 import Cocktail from './Cocktail'
 import Loading from './Loading'
 import { useGlobalContext } from '../context'
-import { Drink } from "../interfaces";
+import { AppContextProps, Drink } from "../interfaces";
 
 const CocktailList = () => {
-  const { cocktails, loading } = useGlobalContext();
+  const { cocktails, loading }: AppContextProps = useGlobalContext();
   if (loading) {
     return <Loading />
   }

@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from 'react'
+import { AppContextProps } from "./interfaces";
 
 const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s='
 const AppContext = createContext(null);
@@ -10,13 +11,13 @@ const AppProvider = ({ children }: { children: ReactNode }) => {
 
 	const fetchDrinks = async () => {
 		setLoading(true);
+		console.log(searchTerm);
 		try {
 			const response = await fetch(`${url}${searchTerm}`);
 			const data = await response.json();
 			const { drinks } = data;
 			if (drinks) {
 				const newCocktails = drinks.map((item: any) => {
-					console.log(item);
 					const { idDrink, strDrink, strDrinkThumb, strAlcoholic, strGlass } = item;
 					return {
 						id: idDrink,
@@ -47,8 +48,9 @@ const AppProvider = ({ children }: { children: ReactNode }) => {
 				loading,
 				cocktails,
 				setLoading,
+				setSearchTerm,
 				setCocktails
-			}}
+			} as AppContextProps}
 		>
 			{children}
 		</AppContext.Provider>

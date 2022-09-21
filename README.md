@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Cocktail DB
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project work with [TheCocktailDB](https://www.thecocktaildb.com) API.
+See [TheCocktailDB API](https://www.thecocktaildb.com/api.php) for more details.
+Live demo: [React Cocktails DB](https://react-cocktails-db-123.netlify.app/)
 
 ## Available Scripts
 
